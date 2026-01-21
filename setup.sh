@@ -4,8 +4,8 @@ echo "Update apt"
 sudo apt update -y
 echo "Install curl"
 sudo apt install -y curl
-echo "install zsh"
-sudo apt install -y zsh
+echo "install zsh, git"
+sudo apt install -y zsh git
 echo "Install mise (mise en place)"
 curl https://mise.run | sh
 ~/.local/bin/mise --version

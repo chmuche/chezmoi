@@ -1,3 +1,6 @@
 [tools]
 chezmoi = "latest"
+doggo = "latest"
+"npm:clever-tools" = "latest"
+"npm:less" = "latest"
 uv = "latest"

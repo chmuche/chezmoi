@@ -1,0 +1,20 @@
+# Base Odoo mise config file
+# This file contains default setup for uv.
+# In your project `mise.toml` you need to set the actual version of python need
+redactions = ["SECRET_*", "*_TOKEN", "PASSWORD"]
+[env]
+_.python.venv = { path = ".venv", create = true }
+UNACCENT="True"
+PROJECT_NAME = "{{ config_root | basename }}"
+ADDON_PATH_PROJECT = "{{ config_root }}"
+ODOO_VERSION = { required = "Set the odoo version you need for your project" }
+ODOO_SERVER="web_server"
+
+
+[tools]
+uv = 'latest'
+python = "3.12"
+
+[settings]
+python.uv_venv_auto = true
+python.uv_venv_create_args = ['--seed']

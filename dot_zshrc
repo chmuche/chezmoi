@@ -102,6 +102,8 @@ export EDITOR="nano"
 #
 # Example aliases
 alias zshconfig="chezmoi edit ~/.zshrc"
+alias cc="clever"
+alias mi="mise"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Add go path and go install path
