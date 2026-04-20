@@ -104,9 +104,11 @@ export EDITOR="nano"
 alias zshconfig="chezmoi edit ~/.zshrc"
 alias cc="clever"
 alias mi="mise"
+alias docker="podman"
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Add go path and go install path
 export GITHUB_USERNAME="chmuche"
-export PATH="~/.local/share/mise/shims:$PATH"
+#export PATH="~/.local/share/mise/shims:$PATH"
 eval "$($HOME/.local/bin/mise activate zsh)"

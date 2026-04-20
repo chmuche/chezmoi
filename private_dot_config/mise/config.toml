@@ -1,7 +1,23 @@
+[env]
+CC_ORGA = "orga_c00f816d-f0e0-46d7-a96b-0f141a869640"
+_.path = '~/workspace/clevercloud/clevertools-batteries/scripts'
+_.source = '~/workspace/clevercloud/clevertools-batteries/scripts/cc_regex'
+
 [tools]
+"cargo:bat" = "latest"
+"cargo:gitlab-ci-ls" = "latest"
+"cargo:gitui" = "latest"
 chezmoi = "latest"
 doggo = "latest"
+fzf = "latest"
+"github:axllent/mailpit" = "latest"
+go = "latest"
+"go:github.com/wagoodman/dive" = "latest"
+node = "25.3.0"
 "npm:clever-tools" = "latest"
-"npm:less" = "latest"
+"npm:less" = "2.7.3"
+rclone = "1.72.1"
+rust = "latest"
 usage = "latest"
 uv = "latest"
+yq = "4.50.1"
