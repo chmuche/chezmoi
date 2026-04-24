@@ -4,9 +4,13 @@ _.path = '~/workspace/clevercloud/clevertools-batteries/scripts'
 _.source = '~/workspace/clevercloud/clevertools-batteries/scripts/cc_regex'
 
 [tools]
+# https://github.com/sharkdp/bat
 "cargo:bat" = "latest"
-"cargo:gitlab-ci-ls" = "latest"
+#"cargo:gitlab-ci-ls" = "latest"
+# https://github.com/gitui-org/gitui
 "cargo:gitui" = "latest"
+# https://github.com/str4d/rage
+"cargo:rage" = "latest"
 chezmoi = "latest"
 doggo = "latest"
 fzf = "latest"
@@ -19,5 +23,8 @@ node = "25.3.0"
 rclone = "1.72.1"
 rust = "latest"
 usage = "latest"
+#https://docs.astral.sh/uv/
 uv = "latest"
+# https://yazi-rs.github.io/
+yazi = "latest"
 yq = "4.50.1"
