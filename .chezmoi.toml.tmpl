@@ -1,26 +1,5 @@
-{{- $email := "" -}}
-{{- if hasKey . "email" -}}
-{{-   $email = .email -}}
-{{- else -}}
-{{-   $email = promptString "Email address" -}}
-{{- end -}}
-
-{{- $system := "" -}}
-{{- if hasKey . "system" -}}
-{{-   $system = .system -}}
-{{- /* Set client to the MacOS default system */ -}}
-{{- else if eq .chezmoi.os "darwin" -}}
-{{    $system = "client" -}}
-{{- else -}}
-{{-   $system = promptString "System (client or server)" -}}
-{{- end -}}
-
 encryption = "age"
 [age]
   identity = "~/.config/chezmoi/key.txt"
   command = "rage"
   recipient = "age1pt333q6n9e5p2l42qd6cxekenqsn9tu5n2f7vat7hsvrhpapcvgsr92y0y"
-
-[data]
-  email = "{{ $email | quote }}"
-  system = "{{ $system | quote }}"
