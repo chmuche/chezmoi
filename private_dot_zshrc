@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
+#if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+#        source /etc/profile.d/vte.sh
+#fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -70,7 +72,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git uv aliases pj mise)
+plugins=(git uv aliases mise)
 
 source $ZSH/oh-my-zsh.sh
 #source ~/.chezmoi/zsh-profie.sh
@@ -110,5 +112,27 @@ alias docker="podman"
 
 # Add go path and go install path
 export GITHUB_USERNAME="chmuche"
-#export PATH="~/.local/share/mise/shims:$PATH"
-eval "$($HOME/.local/bin/mise activate zsh)"
+
+eval "$($HOME/.local/bin/mise activate zsh --shims)"
+# lean-ctx shell hook — begin
+eval "$(lean-ctx init zsh)"
+#$HOME/.local/share/mise/shims
+
+# lean-ctx shell hook — end
+# >>> lean-ctx agent aliases >>>
+alias claude='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" claude'
+alias codebuddy='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codebuddy'
+alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
+alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
+# <<< lean-ctx agent aliases <<<
+
+# >>> lean-ctx proxy env >>>
+# ANTHROPIC_BASE_URL omitted: Claude Pro/Max subscription authenticates against api.anthropic.com directly (set ANTHROPIC_API_KEY to route Claude through the proxy)
+export OPENAI_BASE_URL="http://127.0.0.1:4444/v1"
+export GEMINI_API_BASE_URL="http://127.0.0.1:4444"
+# Grok proxy env omitted: run `grok login` (subscription) or set XAI_API_KEY to route Grok through lean-ctx
+# Command Code omitted (no ~/.commandcode auth — run `cmd login` or set COMMAND_CODE_API_KEY)
+# <<< lean-ctx proxy env <<<
+# >>> lean-ctx wrap claude >>>
+export ANTHROPIC_BASE_URL="http://127.0.0.1:4444"
+# <<< lean-ctx wrap claude <<<

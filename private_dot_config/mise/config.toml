@@ -11,6 +11,7 @@ _.source = '~/workspace/clevercloud/clevertools-batteries/scripts/cc_regex'
 "cargo:gitui" = "latest"
 # https://github.com/str4d/rage
 "cargo:rage" = "latest"
+"cargo:sabiql" = "latest"
 chezmoi = "latest"
 doggo = "latest"
 fzf = "latest"
@@ -28,3 +29,5 @@ uv = "latest"
 # https://yazi-rs.github.io/
 yazi = "latest"
 yq = "4.50.1"
+# glab https://gitlab.com/gitlab-org/cli/-/blob/main/docs/installation_options.md#mise-en-place
+"gitlab:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
